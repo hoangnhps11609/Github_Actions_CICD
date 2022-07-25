@@ -1,18 +1,42 @@
 name: hello world
+
 on:
+  # chay khi push
   push:
+    # dieu kien de chay -- khong chay
     paths: 
       - '!README.md'
       - '!docs/**'
       - '**.js'
+    
+    # branches se chay 
     branches:
       - 'main'
       - 'release/**'
       - '!dev/**'
+
+  # loai pull-request se chay    
+  pull_request:
+    type: [opened, reopened, synchronize]
+
+  # chay thu cong
   workflow_dispatch:
+
+
 jobs:  
+  # ten job
   say-hello:
+    # he dieu hanh - may ao
     runs-on: ubuntu-latest
+
     steps:
+      # dieu kien chay dua theo label
+      - if: ${{github.event_name == 'pull_request'}}
+        uses: mheap/github-action-required-labels@v1
+        with:
+          mode: exactly
+          count: 0
+          labels: "do not build"
+
       - run: echo "TODAY=$(date +%y-%m-%d)" >> $GITHUB_ENV
       - run: echo Hello world, today is $TODAY

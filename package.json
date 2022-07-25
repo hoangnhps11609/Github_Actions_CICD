@@ -1,0 +1,34 @@
+{
+  "name": "Github_Actions_CICD",
+  "version": "1.0.0",
+  "description": "Sample NodeJs project with Github Actions",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoangnhps11609/Github_Actions_CICD.git"
+  },
+  "keywords": [
+    "demo",
+    "workflows",
+    "cicd"
+  ],
+  "author": "hoangnhps11609",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoangnhps11609/Github_Actions_CICD/issues"
+  },
+  "homepage": "https://github.com/hoangnhps11609/Github_Actions_CICD#readme",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  },
+  "dependencies": {
+    "commander": "^8.3.0",
+    "randomstring": "^1.2.1"
+  }
+}
